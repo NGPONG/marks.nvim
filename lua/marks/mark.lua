@@ -111,7 +111,7 @@ function Mark:delete_mark(mark, clear)
   end
 
   if self.opt.force_write_shada then
-    vim.cmd("wshada!")
+    vim.schedule(function() vim.cmd("wshada!") end)
   end
 
   -- only adjust lowest_available_mark if it is lowercase
